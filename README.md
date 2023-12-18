@@ -1,1 +1,1 @@
-# updatepassword
+your_reset_link.html

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conform password</title>
+
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   background-color: #e6e6e6;
+    text-align: center;
+    justify-content: center;
+    }
+    form{
+        padding: 20px;
+    border-radius: 8px ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin-left: 2%;
+    }
+    label {
+      float: left;
+      clear: left;
+      width: 80px; /* Adjust the width as needed */
+      text-align: right;
+      margin-right: 10px; /* Adjust the margin as needed */
+    }
+    input {
+      margin-left: 90px; /* Adjust the margin as needed */
+      height: 25px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 80%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    .reset{
+    position: fixed;
+text-align: center;
+left: 500px;
+width: 500px;
+height: 60%;
+background-color: white;
+border: 1px;
+padding: 15px ;
+    }
+
+  p{
+    font-size: 14px;
+    margin: 15px 0;
+    display: inline-block;
+    color: #ffffff;
+    padding: 5px 20px;
+  } 
+  
+
+    </style>
+</head>
+<body>
+    <div class="reset">
+    <form>
+        <label for="password">password</label>
+        <input type="password" id="password"  placeholder="your current password"  >
+       
+    </br>
+        <label for="cnfrm-password">Conformpassword</label>
+        <input type="password" id="cnfrm-password" placeholder="enter new password" >
+        <p id="meassage"></p>
+    </br>
+        <input type="button" onclick="checkpassword()"  value="submit" style="margin-top: 22%;" >
+    </form>
+    </div>
+
+    <script>
+        function checkpassword(){
+            let password=document.getElementById("password").value;
+            let cnfrmpassword=document.getElementById("cnfrm-password").value;
+           // console.log(password,cnfrmpassword);
+            console.log("password:",password,'\n',"cnfrmpassword:",cnfrmpassword);
+            let message=document.getElementById("meassage");
+
+            if(password.length !=0){
+                if(password==cnfrmpassword){
+                    message.textContent="password match";
+                    message.style.backgroundColor="#3ae374";
+                }
+                else{
+                    message.textContent="password doesn't match";
+                    message.style.backgroundColor="#ff4d4d";
+                }
+                alert(" reset password is updated");
+                
+            }
+            else{
+                alert("password can't be empty!");
+                message.textContent=" ";
+            }
+        }
+
+        
+    </script>
+    
+</body>
+</html>
